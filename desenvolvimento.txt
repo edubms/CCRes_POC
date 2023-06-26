@@ -1,0 +1,3 @@
+Para iniciar o projeto da página web, foram instalados o node, e dentro da pasta de backend, o express, o mongoose(banco de dados) e o cors(para impedir conflitos referentes a rotas) e por fim o nodemon com a opção de desenvolvimento.
+
+O frontend foi criado usando Chakra ui para poder 

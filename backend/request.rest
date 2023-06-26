@@ -1,0 +1,38 @@
+POST http://localhost:3000/api/resources
+Content-Type: application/json
+
+{
+    "sellerWallet":"0x31742D5b70DeC8EcB0863914e46cB40009B3cb16",
+    "resourceIpAddress":"192.168.1.98",
+    "resoureUser":"duduzin",
+    "resourcePassword":"12345678",
+    "resourceSpace":"30",
+    "resourceValue":"5"
+}
+
+### 
+
+
+GET http://localhost:3000/api/resources
+
+###
+GET http://localhost:3000/api/resources/6446118ece893ec9a0b23d04
+
+
+###
+
+DELETE http://localhost:3000/api/resources/6446117dce893ec9a0b23d02
+
+###
+
+PUT http://localhost:3000/api/resources/6446118ece893ec9a0b23d04
+Content-Type: application/json
+
+{
+    "sellerWallet":"0x31742D5b70DeC8EcB0863914e46cB40009B3cb16",
+    "resourceIpAddress":"192.168.1.85",
+    "resoureUser":"dudu",
+    "resourcePassword":"abcsd",
+    "resourceSpace":"30",
+    "resourceValue":"7"
+}
