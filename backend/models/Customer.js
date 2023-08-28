@@ -2,12 +2,12 @@ const mongoose = require("mongoose");
 
 const { Schema } = mongoose;
 
-const costumerSchema =  new Schema ({
-    costumerWallet:{
+const customerSchema =  new Schema ({
+    customerWallet:{
         type: String,
         required: true,
     },
-    costumerPublicKey:{
+    customerPublicKey:{
         type: String,
         required: true,
     },
@@ -23,8 +23,8 @@ const costumerSchema =  new Schema ({
 );
 
 
-const Costumer = mongoose.model("Costumer", costumerSchema);
+const Customer = mongoose.model("Customer", customerSchema);
 
 module.exports = {
-    Costumer,costumerSchema
+    Customer,customerSchema
 };

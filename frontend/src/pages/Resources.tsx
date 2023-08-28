@@ -25,8 +25,8 @@ function ResourcesPage()  {
     history.push('/');
   };
 
-  const handleCostumerClick = () => {
-    history.push('/costumer');
+  const handleCustomerClick = () => {
+    history.push('/customer');
   };
 
   const successToast = () => {
@@ -93,7 +93,7 @@ function ResourcesPage()  {
             <Spacer />
             <ButtonGroup gap='2'>
                 <Button 
-                onClick={handleCostumerClick}            
+                onClick={handleCustomerClick}            
                 w={120}
                 p="5"
                 bg="teal.400"

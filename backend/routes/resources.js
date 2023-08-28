@@ -22,6 +22,10 @@ router
     .route("/resources/:id")
     .put((req, res) => resourcesController.update(req, res));
 
+router
+    .route("/resources/buy")
+    .post((req, res) => resourcesController.buy(req, res));
+
 
 
 module.exports = router;

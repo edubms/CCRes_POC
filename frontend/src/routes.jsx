@@ -1,6 +1,6 @@
 import HomePage from './pages/home';
 import ResourcesPage from './pages/resources';
-import CostumerPage from './pages/costumer';
+import CustomerPage from './pages/customer';
 
 export const routes = [
   {
@@ -14,8 +14,8 @@ export const routes = [
     component: ResourcesPage
   },
   {
-    path: '/costumer',
+    path: '/customer',
     exact: true,
-    component: CostumerPage
+    component: CustomerPage
   }
 ];

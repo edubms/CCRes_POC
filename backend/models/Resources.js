@@ -27,6 +27,10 @@ const resourcesSchema = new Schema({
         type: Number,
         required: true, 
     },
+    resourceSold:{
+        type: Boolean,
+        default: false, 
+    },
 },{ timestamps: true }
 );
 

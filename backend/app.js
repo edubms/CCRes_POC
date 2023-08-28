@@ -8,6 +8,7 @@ app.use(express.json());
 //DB connection
 const conn = require("./db/conn");
 
+
 conn();
 
 //Routes
@@ -18,3 +19,4 @@ app.use("/api",routes);
 app.listen(3000, function(){
     console.log('server is online in port 3000');
 });
+

@@ -20,8 +20,8 @@ import {
       history.push('/resources');
     };
   
-    const handleCostumerClick = () => {
-      history.push('/costumer');
+    const handleCustomerClick = () => {
+      history.push('/customer');
     };
 
     return (
@@ -55,7 +55,7 @@ import {
                 >
                    <ButtonGroup gap='2'>
                         <Button 
-                            onClick={handleCostumerClick}                
+                            onClick={handleCustomerClick}                
                             w={120}
                             p="5"
                             bg="teal.400"

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import listResourcesUseCase from '../useCases/listResourcesUseCase';
+import buyResourcesUseCase from '../useCases/buyResourcesUseCase';
 import { useHistory } from 'react-router-dom';
 
 
@@ -18,10 +19,11 @@ import { useHistory } from 'react-router-dom';
       Select,
     } from "@chakra-ui/react"
   
-    function CostumerPage(){
+    function CustomerPage(){
     
         const history = useHistory();
         const [availableResources, setAvailableResources] = useState([]);
+        const [selectedResource, setSelectedResource] = useState<string>();
 
         const handleHomeClick = () => {
           history.push('/');
@@ -36,6 +38,15 @@ import { useHistory } from 'react-router-dom';
             setAvailableResources(data);
           });
         };
+
+        const handleBuyClick = () => {
+          buyResourcesUseCase(selectedResource).then(data => {console.log(data)})
+        }
+            // chamar o deposit e passar o valor pego no banco na chamada da função, 
+            // chamar o transfer depois de validar o deposit para que o valor pego seja enviado ao comprador
+            // devolver na tela do comprador as informações de acesso.
+            
+
 
         useEffect(() => {loadResources()}, [])
 
@@ -111,7 +122,7 @@ import { useHistory } from 'react-router-dom';
                       </Box>
                   </HStack>
                   <HStack spacing="4">
-                    <Select placeholder='Select option'>
+                    <Select placeholder='Select option' onChange={e => setSelectedResource(e.target.value)}>
                       {
                         availableResources.map((resource) => <option value={resource._id}>{`ETH ${resource.resourceValue} - GB ${resource.resourceSpace}`}</option>)
                       }
@@ -119,6 +130,7 @@ import { useHistory } from 'react-router-dom';
                   </HStack>
                   <HStack justify="center">
                       <Button
+                      id="buyButton"
                       w={240}
                       p="6"
                       type="submit"
@@ -128,6 +140,7 @@ import { useHistory } from 'react-router-dom';
                       fontSize="xl"
                       mt="2"
                       _hover={{ bg: "teal.800"}}
+                      onClick={handleBuyClick}
                       >
                       Buy
                       </Button>
@@ -141,5 +154,5 @@ import { useHistory } from 'react-router-dom';
     )
   
   }
-  export default CostumerPage
+  export default CustomerPage
   
