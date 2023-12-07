@@ -39,13 +39,14 @@ import { useHistory } from 'react-router-dom';
           });
         };
 
-        const handleBuyClick = () => {
-          buyResourcesUseCase(selectedResource).then(data => {console.log(data)})
-        }
-            // chamar o deposit e passar o valor pego no banco na chamada da função, 
-            // chamar o transfer depois de validar o deposit para que o valor pego seja enviado ao comprador
-            // devolver na tela do comprador as informações de acesso.
-            
+        const handleBuyClick = async () => {
+          if (selectedResource) {
+            const result = await buyResourcesUseCase(selectedResource);
+            console.log(result);
+          } else {
+            console.error('Please select a resource before buying.');
+          }
+        };
 
 
         useEffect(() => {loadResources()}, [])
